@@ -16,23 +16,31 @@ class FantasyNameGeneratorScraper(Scraper):
         "CHANGELING": ("https://www.fantasynamegenerators.com/dnd-changeling-names.php", 0),
     }
 
+    def __init__(self, batches_per_call=10):
+        """
+        :param batches_per_call: How many times to hit the "Get Names" button each time the site is loaded.
+        """
+        super(FantasyNameGeneratorScraper, self).__init__()
+        self.batches_per_call = batches_per_call
+
     def get_available_categories(self) -> list[str]:
         return list(self._CATEGORY_MAPPING.keys())
 
-    @staticmethod
-    def _fetch_names(url, gen_index=0):
+    def _fetch_names(self, url, gen_index=0):
         driver = webdriver.Firefox()
         driver.get(url)
         driver.implicitly_wait(5)
 
         # We wait until this element is loaded to know that we can call name generation.
         driver.find_element(By.ID, "result")
-        # Calling this can differentiate between the options on the generator, e.g., male/female.
-        driver.execute_script(f"nameGen({gen_index});")
-        # The script call invalidates the element, so we want to find it again.
-        elem = driver.find_element(By.ID, "result")
 
-        names = elem.text.split("\n")
+        names = []
+        for _ in range(self.batches_per_call):
+            # Calling this can differentiate between the options on the generator, e.g., male/female.
+            driver.execute_script(f"nameGen({gen_index});")
+            # The script call invalidates the element, so we want to find it again.
+            elem = driver.find_element(By.ID, "result")
+            names.extend(elem.text.split("\n"))
 
         driver.close()
         return names
