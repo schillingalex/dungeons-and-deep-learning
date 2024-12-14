@@ -52,7 +52,7 @@ class FantasyNameGeneratorScraper(Scraper):
     def _fetch_names(self, url, gen_index=0):
         driver = webdriver.Firefox()
         driver.get(url)
-        driver.implicitly_wait(5)
+        driver.implicitly_wait(10)
 
         # We wait until this element is loaded to know that we can call name generation.
         driver.find_element(By.ID, "result")

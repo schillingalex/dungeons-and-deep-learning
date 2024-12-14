@@ -39,10 +39,15 @@ class Scraper(ABC):
 
         names = []
         while len(names) < limit:
+            previous_length = len(names)
             # Call method for subclasses to handle the details
             names.extend(self._get_name_batch(category))
 
             # Duplicate removal, may be slow to do for each batch when requesting too many names
             if not allow_duplicates:
                 names = list(dict.fromkeys(names))
+
+            if len(names) == previous_length:
+                print("Not enough names found, returning what we have.")
+                return names
         return names[:limit]
