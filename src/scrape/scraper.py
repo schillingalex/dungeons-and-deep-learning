@@ -48,6 +48,6 @@ class Scraper(ABC):
                 names = list(dict.fromkeys(names))
 
             if len(names) == previous_length:
-                print("Not enough names found, returning what we have.")
+                print(f"Not enough names found for category '{category}', returning what we have ({len(names)} names).")
                 return names
         return names[:limit]
