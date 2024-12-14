@@ -11,9 +11,32 @@ class FantasyNameGeneratorScraper(Scraper):
 
     # The categories are mapped to the URL and the index of the generation button below the names
     _CATEGORY_MAPPING = {
+        "CHANGELING": ("https://www.fantasynamegenerators.com/dnd-changeling-names.php", 0),
+        "DRAGONBORN_MALE": ("https://www.fantasynamegenerators.com/dnd-dragonborn-names.php", 0),
+        "DRAGONBORN_FEMALE": ("https://www.fantasynamegenerators.com/dnd-dragonborn-names.php", 1),
+        "DRAGONBORN_CHILD": ("https://www.fantasynamegenerators.com/dnd-dragonborn-names.php", 2),
+        "DROW_MALE": ("https://www.fantasynamegenerators.com/dnd-drow-names.php", 0),
+        "DROW_FEMALE": ("https://www.fantasynamegenerators.com/dnd-drow-names.php", 1),
         "DWARF_MALE": ("https://www.fantasynamegenerators.com/dnd-dwarf-names.php", 0),
         "DWARF_FEMALE": ("https://www.fantasynamegenerators.com/dnd-dwarf-names.php", 1),
-        "CHANGELING": ("https://www.fantasynamegenerators.com/dnd-changeling-names.php", 0),
+        "ELF_MALE": ("https://www.fantasynamegenerators.com/dnd-elf-names.php", 0),
+        "ELF_FEMALE": ("https://www.fantasynamegenerators.com/dnd-elf-names.php", 1),
+        "ELF_CHILD": ("https://www.fantasynamegenerators.com/dnd-elf-names.php", 2),
+        "GNOME_MALE": ("https://www.fantasynamegenerators.com/dnd-gnome-names.php", 0),
+        "GNOME_FEMALE": ("https://www.fantasynamegenerators.com/dnd-gnome-names.php", 1),
+        "GOBLIN_MALE": ("https://www.fantasynamegenerators.com/dnd-goblin-names.php", 0),
+        "GOBLIN_FEMALE": ("https://www.fantasynamegenerators.com/dnd-goblin-names.php", 1),
+        "HALFLING_MALE": ("https://www.fantasynamegenerators.com/dnd-halfling-names.php", 0),
+        "HALFLING_FEMALE": ("https://www.fantasynamegenerators.com/dnd-halfling-names.php", 1),
+        "HUMAN_MALE": ("https://www.fantasynamegenerators.com/dnd-human-names.php", 0),
+        "HUMAN_FEMALE": ("https://www.fantasynamegenerators.com/dnd-human-names.php", 1),
+        "KENKU": ("https://www.fantasynamegenerators.com/dnd-kenku-names.php", 0),
+        "ORC_MALE": ("https://www.fantasynamegenerators.com/dnd-orc-names.php", 0),
+        "ORC_FEMALE": ("https://www.fantasynamegenerators.com/dnd-orc-names.php", 1),
+        "TIEFLING_MALE": ("https://www.fantasynamegenerators.com/dnd-tiefling-names.php", 0),
+        "TIEFLING_FEMALE": ("https://www.fantasynamegenerators.com/dnd-tiefling-names.php", 1),
+        "TIEFLING_VIRTUE": ("https://www.fantasynamegenerators.com/dnd-tiefling-names.php", 2),
+        "WARFORGED": ("https://www.fantasynamegenerators.com/dnd-warforged-names.php", 0),
     }
 
     def __init__(self, batches_per_call=10):
