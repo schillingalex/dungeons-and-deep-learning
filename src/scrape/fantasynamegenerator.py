@@ -14,7 +14,7 @@ class FantasyNameGeneratorScraper(Scraper):
         "CHANGELING": ("https://www.fantasynamegenerators.com/dnd-changeling-names.php", 0),
         "DRAGONBORN_MALE": ("https://www.fantasynamegenerators.com/dnd-dragonborn-names.php", 0),
         "DRAGONBORN_FEMALE": ("https://www.fantasynamegenerators.com/dnd-dragonborn-names.php", 1),
-        "DRAGONBORN_CHILD": ("https://www.fantasynamegenerators.com/dnd-dragonborn-names.php", 2),
+        "DRAGONBORN_CHILD": ("https://www.fantasynamegenerators.com/dnd-dragonborn-names.php", 2),  # low diversity
         "DROW_MALE": ("https://www.fantasynamegenerators.com/dnd-drow-names.php", 0),
         "DROW_FEMALE": ("https://www.fantasynamegenerators.com/dnd-drow-names.php", 1),
         "DWARF_MALE": ("https://www.fantasynamegenerators.com/dnd-dwarf-names.php", 0),
@@ -30,13 +30,13 @@ class FantasyNameGeneratorScraper(Scraper):
         "HALFLING_FEMALE": ("https://www.fantasynamegenerators.com/dnd-halfling-names.php", 1),
         "HUMAN_MALE": ("https://www.fantasynamegenerators.com/dnd-human-names.php", 0),
         "HUMAN_FEMALE": ("https://www.fantasynamegenerators.com/dnd-human-names.php", 1),
-        "KENKU": ("https://www.fantasynamegenerators.com/dnd-kenku-names.php", 0),
+        "KENKU": ("https://www.fantasynamegenerators.com/dnd-kenku-names.php", 0),  # low diversity
         "ORC_MALE": ("https://www.fantasynamegenerators.com/dnd-orc-names.php", 0),
         "ORC_FEMALE": ("https://www.fantasynamegenerators.com/dnd-orc-names.php", 1),
         "TIEFLING_MALE": ("https://www.fantasynamegenerators.com/dnd-tiefling-names.php", 0),
         "TIEFLING_FEMALE": ("https://www.fantasynamegenerators.com/dnd-tiefling-names.php", 1),
-        "TIEFLING_VIRTUE": ("https://www.fantasynamegenerators.com/dnd-tiefling-names.php", 2),
-        "WARFORGED": ("https://www.fantasynamegenerators.com/dnd-warforged-names.php", 0),
+        "TIEFLING_VIRTUE": ("https://www.fantasynamegenerators.com/dnd-tiefling-names.php", 2),  # low diversity
+        "WARFORGED": ("https://www.fantasynamegenerators.com/dnd-warforged-names.php", 0),  # low diversity
     }
 
     def __init__(self, batches_per_call=10):
