@@ -24,4 +24,9 @@ def load_name_dataset(directory: str) -> tuple[list[str], list[str]]:
             names = f.read().splitlines()
         X.extend(names)
         y.extend([file[:-4]] * len(names))
+
+    assert len(X) == len(y), "Something went horribly wrong. Length of X and y should be the same."
+    if len(X) == 0:
+        raise ValueError("No names found in the given directory.")
+
     return X, y
