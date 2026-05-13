@@ -21,3 +21,17 @@ def character_vocabulary_from_dataset(dataset: list[str], minimum_set: list[str]
         complete_str = re.sub(r"\s", "", complete_str)
     characters = list(set(complete_str))
     return sorted(characters)
+
+
+def count_words_in_string(string: str) -> int:
+    """
+    Counts the number of words in a given string based on a simple whitespace split.
+
+    Examples:
+        Hello world -> 2 words
+        23-year-old -> 1 word
+
+    :param string: Input string to count the words in.
+    :return: Number of words in input string.
+    """
+    return len(string.split())

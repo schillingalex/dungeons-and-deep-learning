@@ -1,4 +1,4 @@
-from features.strings import character_vocabulary_from_dataset
+from features.strings import character_vocabulary_from_dataset, count_words_in_string
 
 
 def test_character_vocabulary_from_dataset_simple():
@@ -29,3 +29,18 @@ def test_character_vocabulary_from_dataset_whitespace():
 def test_character_vocabulary_from_dataset_include_whitespace():
     chars = character_vocabulary_from_dataset(["a b\tc\n"], include_whitespace=True)
     assert chars == ["\t", "\n", " ", "a", "b", "c"]
+
+
+def test_count_words_in_string_simple():
+    n_words = count_words_in_string("Hello World")
+    assert n_words == 2
+
+
+def test_count_words_in_string_empty_string():
+    n_words = count_words_in_string("")
+    assert n_words == 0
+
+
+def test_count_words_in_string_symbols():
+    n_words = count_words_in_string("The 23-yeal-old Orc Krag'Thal")
+    assert n_words == 4
